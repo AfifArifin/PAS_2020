@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "303245040916",
+    "firebase_url": "https://footballteam-8f795.firebaseio.com",
+    "project_id": "footballteam-8f795",
+    "storage_bucket": "footballteam-8f795.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303245040916:android:0b6eb5353c097ac63e7601",
+        "android_client_info": {
+          "package_name": "com.example.footballteam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303245040916-50aeg8i8v9r2hmecbgpflsr4rcu0rt23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAAr1OOVt5qzaX4fHFJdNnEaDEVf2Oc6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303245040916-50aeg8i8v9r2hmecbgpflsr4rcu0rt23.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

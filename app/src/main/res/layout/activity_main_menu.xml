@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/silver"
+    android:fitsSystemWindows="true">
+
+    <com.github.florent37.diagonallayout.DiagonalLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:diagonal_angle="10"
+        app:diagonal_direction="left"
+        app:diagonal_position="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/design_header"
+            android:orientation="vertical"
+            android:scaleType="fitXY" >
+
+
+        </LinearLayout>
+
+    </com.github.florent37.diagonallayout.DiagonalLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/transition_background_drawable"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/halo"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:background="@drawable/transition_background_drawable"
+            android:textColor="@color/white"
+            android:text="Hi, there !"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/ball"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ball"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.gauravk.bubblenavigation.BubbleNavigationLinearView
+            android:id="@+id/navigationBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bg_rounded"
+            android:elevation="8dp"
+            android:padding="5dp">
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:bt_colorActive="#81c784"
+                app:bt_colorInactive="#78909c"
+                app:bt_icon="@drawable/ic_ball_soccer"
+                app:bt_shape="@drawable/tab_movie_color"
+                app:bt_title="Teams"
+                app:bt_titlePadding="5dp"
+                app:bt_titleSize="10sp" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/evenUpComing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:bt_colorActive="#aa86f7"
+                app:bt_colorInactive="#78909c"
+                app:bt_icon="@drawable/ic_events"
+                app:bt_shape="@drawable/tab_tv_color"
+                app:bt_title="Last Events"
+                app:bt_titlePadding="5dp"
+                app:bt_titleSize="10sp" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/favoriteTeams"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:bt_colorActive="#f06292"
+                app:bt_colorInactive="#78909c"
+                app:bt_icon="@drawable/ic_favorite"
+                app:bt_shape="@drawable/tab_fav_color"
+                app:bt_title="Favorite"
+                app:bt_titlePadding="5dp"
+                app:bt_titleSize="10sp" />
+
+        </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

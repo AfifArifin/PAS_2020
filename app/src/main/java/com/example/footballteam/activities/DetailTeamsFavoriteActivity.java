@@ -1,7 +1,9 @@
 package com.example.footballteam.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -227,9 +229,26 @@ public class DetailTeamsFavoriteActivity extends AppCompatActivity {
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    helper.deleteFavoriteMovie(idTeam);
-                    Toast.makeText(DetailTeamsFavoriteActivity.this, TeamName+" deleted", Toast.LENGTH_SHORT).show();
-                    finish();
+                    DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            switch (which){
+                                case DialogInterface.BUTTON_POSITIVE:
+                                    //Yes button clicked
+                                    helper.deleteFavoriteMovie(idTeam);
+                                    Toast.makeText(DetailTeamsFavoriteActivity.this, TeamName+" deleted", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                case DialogInterface.BUTTON_NEGATIVE:
+                                    //No button clicked
+                                    break;
+                            }
+                        }
+                    };
+
+                    androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(DetailTeamsFavoriteActivity.this);
+                    builder.setMessage("Are you sure want to delete ?").setPositiveButton("Yes", dialogClickListener)
+                            .setNegativeButton("No", dialogClickListener).show();
+
                 }
             });
 
